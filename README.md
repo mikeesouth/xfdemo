@@ -58,3 +58,6 @@ the Text property is an empty string.
 I could solve this by listening to propertyChanged for the Text property and when it changes I would
 send the new Text to the native element and updating it's text.
 But could/should I create the element at a later point in the PCL project and NativeImageButton?
+
+## Screenshot describing the two major problems:
+![Problems](xfproblems.png)
