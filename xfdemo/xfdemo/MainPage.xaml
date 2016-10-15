@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:xfdemo"
+             xmlns:controlscustom="clr-namespace:xfdemo.Controls.Custom;assembly=xfdemo"
+             xmlns:controlsnative="clr-namespace:xfdemo.Controls.Native;assembly=xfdemo"
+             x:Class="xfdemo.MainPage">
+
+    <RelativeLayout HorizontalOptions="FillAndExpand"
+                    VerticalOptions="FillAndExpand"
+                    BackgroundColor="Black">
+        
+        <StackLayout Padding="10"
+                     VerticalOptions="Center"
+                     Spacing="20">
+
+            <Label TextColor="White"
+                   HorizontalOptions="Start">
+                <Label.Text>
+Custom Renderer
+XF button has Color.Transparent. Pressing and holding the button gives no effect (but click works since Transparent XF button handles click). Pressing and holding outside the button on the page background makes an effect on this button, it seems like the Android press area is huuuuuge.
+
+Native Embedding
+On press effect works fine, click works fine. sizing does not work. I want the button to fill the parent width with centered text, i.e. it should match the look of the custom renderer button.
+                </Label.Text>
+            </Label>
+
+            <controlscustom:ImageButton Text="CustomRenderer: Login Facebook"
+                                        Command="{Binding CustomButtonCommand}"
+                                        Icon="ic_facebook_white.png"></controlscustom:ImageButton>
+
+            <controlsnative:NativeImageButton Text="Native: Login Facebook"
+                                              TapCommand="{Binding NativeButtonCommand}"
+                                              Icon="ic_facebook_white.png"></controlsnative:NativeImageButton>
+
+            <!--<controlsnative:FloatingButton TapCommand="{Binding FloatingButtonCommand}"></controlsnative:FloatingButton>-->
+        
+        </StackLayout>
+        
+    </RelativeLayout>
+
+</ContentPage>
